@@ -69,6 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
+                  fontFamily: 'PollerOne',
                   color: Colors.white,
                 ),
               ),
@@ -111,6 +112,7 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'pollerOne',
                     color: Color(0xFF6FC0D3),
                   ),
                 ),
@@ -126,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 const Text(
-                  "medical product",
+                  "medical prodct ONLINE shopping",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,

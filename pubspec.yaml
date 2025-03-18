@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   font_awesome_flutter: ^10.8.0
   flutter_bloc: ^9.0.0
+  iconsax: ^0.0.8
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +68,9 @@ flutter:
     - assets/images/image 225.png
     - assets/images/Ellipse 1.png
     - assets/images/stethoscope.png
+    - assets/images/image 226.png
+    - assets/images/image 229.png
+    
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -79,10 +84,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: PollerOne
+
+      fonts:
+        - asset: assetss/font/PollerOne-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
