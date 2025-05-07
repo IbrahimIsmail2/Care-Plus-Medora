@@ -303,20 +303,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.fromLTRB(16, 32, 16, 32),
           child: ListView(
             children: [
               SizedBox(height: 24),
               Text(
-                "Create your account to save time & care more for your health",
+                "Create your account to save time \n & care more for your health",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
                   color: Colors.black87,
                 ),
               ),
-              SizedBox(height: 32),
+              SizedBox(height: 40),
               Form(
                 key: _formKey,
                 child: Column(
@@ -350,18 +350,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
-                "Or continue with",
-                style: TextStyle(fontSize: 14, color: Colors.black54),
+              SizedBox(height: 30),
+              Center(
+                child: Text(
+                  "Or continue with",
+                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500, color: Colors.black),
+                ),
               ),
               SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _buildSocialButton("assets/facebook.png"),
-                  SizedBox(width: 20),
-                  _buildSocialButton("assets/google.png"),
+                  Image.asset('assets/images/Frame1000006082.png'),
+                  const SizedBox(width: 20),
+                  Image.asset('assets/images/Frame 1000006083.png'),
                 ],
               ),
               SizedBox(height: 24),
@@ -399,7 +401,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   style: TextStyle(fontSize: 12, color: Colors.black45),
                   children: [
                     TextSpan(
-                      text: "Medora’s Terms of Service",
+                      text: "Medora’s\n Terms of Service",
                       style: TextStyle(color: Color(0xFF6FC0D3)),
                     ),
                     TextSpan(

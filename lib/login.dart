@@ -26,7 +26,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginInitial()) {
     on<LoginSubmitted>((event, emit) async {
       emit(LoginLoading());
-      await Future.delayed(Duration(seconds: 2)); // Simulate network delay
+      await Future.delayed(const Duration(seconds: 2)); 
       if (event.email == "hala50@gmail.com" && event.password == "hal5m7b") {
         emit(LoginInitial());
       } else {
@@ -68,11 +68,11 @@ class LoginScreen extends StatelessWidget {
                             color: Colors.red,
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
-                              const Icon(Icons.error, color: Colors.white),
-                              const SizedBox(width: 8),
-                              const Expanded(
+                              Icon(Icons.error, color: Colors.white),
+                              SizedBox(width: 8),
+                              Expanded(
                                 child: Text(
                                   "Email or Password is incorrect. Please try again.",
                                   style: TextStyle(color: Colors.white),
@@ -110,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                         height: 50,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF6FC0D3),
+                            backgroundColor: const Color(0xFF6FC0D3),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
                             ),
@@ -134,15 +134,14 @@ class LoginScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       const Text("Or continue with",
-                          style:
-                              TextStyle(fontSize: 14, color: Colors.black54)),
-                      const SizedBox(height: 16),
+                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500, color: Colors.black),                  ),const SizedBox(height: 16),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          _buildSocialButton(Icons.facebook, Colors.blue),
+                          Image.asset('assets/images/Frame1000006082.png'),
                           const SizedBox(width: 20),
-                          _buildSocialButton(Icons.g_translate, Colors.red),
+                          Image.asset('assets/images/Frame 1000006083.png'),
                         ],
                       ),
                       const SizedBox(height: 24),
@@ -150,7 +149,7 @@ class LoginScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text("Not on Medora yet?",
-                              style: TextStyle(fontSize: 14)),
+                              style: TextStyle(fontSize: 16,color: Colors.black)),
                           TextButton(
                             onPressed: () {
                               // انتقل إلى شاشة التسجيل
@@ -195,11 +194,5 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialButton(IconData icon, Color color) {
-    return CircleAvatar(
-      radius: 24,
-      backgroundColor: Colors.white,
-      child: Icon(icon, color: color, size: 32),
-    );
-  }
+
 }

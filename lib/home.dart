@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
               Row(
                 children: [
                   const CircleAvatar(
-                    backgroundImage: AssetImage('assets/profile.png'),
+                    backgroundImage: AssetImage('assets/images/image 229.png'),
                   ),
                   const SizedBox(width: 10),
                   Text(
@@ -38,20 +38,28 @@ class Home extends StatelessWidget {
                         fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                   const Spacer(),
-                  Icon(Iconsax.scan_barcode, size: 26),
-                ],
+                  Image.asset('assets/images/ai_chat.png',width: 40,)]
               ),
               const SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search any Product..',
-                  prefixIcon: const Icon(Iconsax.search_normal),
-                  suffixIcon: const Icon(Iconsax.microphone),
-                  filled: true,
-                  fillColor: Color(0x4D99ABCC),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: TextField(
+                  style: const TextStyle(color: Colors.grey),
+                  decoration: InputDecoration(
+                    hintText: 'Search any Product..',
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                    suffixIcon: const Icon(Icons.mic_none_rounded, color: Color(0xFF6FC0D3)),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 25.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide.none,
+                    ),
+                    prefixIconConstraints: const BoxConstraints(
+                      minWidth: 50, minHeight: 50,
+                    ),
                   ),
                 ),
               ),
@@ -62,11 +70,12 @@ class Home extends StatelessWidget {
                   Container(
                     height: 140,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
+                      color: const Color(0xFF6FC0D3),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
                       children: [
+                        Image.asset('assets/images/image 229.png'),
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsets.all(16.0),
@@ -88,27 +97,9 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Positioned(
-                    bottom: 10,
-                    child: Row(
-                      children: List.generate(3, (index) {
-                        return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 4),
-                          width: 12,
-                          height: 12,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.grey),
-                            color: index == 0
-                                ? Color(0x6FC0D3)
-                                : Color(0x7E7E7EB2),
-                          ),
-                        );
-                      }),
-                    ),
-                  ),
                 ],
               ),
+
               const SizedBox(height: 20),
               _buildSectionHeader('New Arrival'),
               const SizedBox(height: 10),
@@ -138,7 +129,7 @@ class Home extends StatelessWidget {
         ),
         Text(
           'view all >',
-          style: GoogleFonts.poppins(fontSize: 14, color: Colors.blue),
+          style: GoogleFonts.poppins(fontSize: 14, color: const Color(0xFF6FC0D3)),
         ),
       ],
     );
@@ -151,13 +142,30 @@ class Home extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 6,
         itemBuilder: (context, index) => Container(
-          width: 120,
+          width: 200,
           margin: const EdgeInsets.only(right: 10),
           decoration: BoxDecoration(
-            color: Colors.grey[200],
             borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: Colors.black)
           ),
-          child: Text('ggggggggggggggg'),
+          child:Column(children: [
+            Expanded(
+              flex: 3,
+              child: Stack(children: [
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: IconButton(
+                    icon: const Icon(Icons.favorite_border, color: Colors.orangeAccent),
+                    onPressed: () {
+                    },
+                  ),
+                ),
+              ],),
+            ),
+            Expanded(flex: 1,child: Container(width: double.infinity,decoration: BoxDecoration(color: Colors.grey[200],            borderRadius: BorderRadius.circular(10),
+            ) ,child: const Center(child: Text('Medical Devices',style: TextStyle(color: Colors.black),))))
+          ],),
         ),
       ),
     );
@@ -171,33 +179,176 @@ class Home extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: 0.7,
+        childAspectRatio: 1.1,
       ),
       itemCount: 6,
       itemBuilder: (context, index) => Container(
         decoration: BoxDecoration(
-          color: Colors.grey[200],
           borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.black),
+          color: Colors.white,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            /// Image and favorite icon section
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
+                  child: Image.network(
+                    'https://picsum.photos/200/300',  // Using a reliable placeholder image service
+                    height: 100,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Container(
+                        height: 100,
+                        color: Colors.grey[300],
+                        child: const Center(
+                          child: Icon(Icons.error, color: Colors.red),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: IconButton(
+                    icon: const Icon(Icons.favorite_border, color: Colors.orangeAccent),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
+
+            /// Title + Description + Price
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Biological Microscope',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Lab LED Microscope 100',
+                    style: TextStyle(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w400),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 6),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'EG 120',
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green),
+                      ),
+                      Container(
+
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.orangeAccent),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.add_shopping_cart, size: 22),
+                            SizedBox(width: 4),
+                            Text(
+                              'Add',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
-
   Widget _buildArticlesList() {
     return SizedBox(
-      height: 120,
+      height: 150, // Increased height to accommodate more text
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 3,
+        itemCount: 6,
         itemBuilder: (context, index) => Container(
-          width: 200,
+          width: 320, // Increased width for longer text
           margin: const EdgeInsets.only(right: 10),
           decoration: BoxDecoration(
-            color: Colors.grey[200],
             borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: Colors.black),
+          ),
+          child: Stack(
+            children: [
+              // Background image that fills the entire container
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(
+                  'https://picsum.photos/400/200', // Higher resolution image
+                  height: 150,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      height: 150,
+                      color: Colors.grey[300],
+                      child: const Center(
+                        child: Icon(Icons.error, color: Colors.red),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // Semi-transparent black overlay container at the bottom
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.7), // Slightly more opaque for better readability
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    'Streamlining Global Market Access for Medical Devices with the CB Scheme',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 14, // Slightly larger text
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2, // Allow for two lines of text
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
     );
-  }
-}
+  }}
