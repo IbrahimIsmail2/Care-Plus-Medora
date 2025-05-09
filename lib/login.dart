@@ -26,7 +26,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginInitial()) {
     on<LoginSubmitted>((event, emit) async {
       emit(LoginLoading());
-      await Future.delayed(const Duration(seconds: 2)); 
+      await Future.delayed(const Duration(seconds: 2));
       if (event.email == "hala50@gmail.com" && event.password == "hal5m7b") {
         emit(LoginInitial());
       } else {
@@ -133,9 +133,14 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      const Text("Or continue with",
-                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500, color: Colors.black),                  ),const SizedBox(height: 16),
-
+                      const Text(
+                        "Or continue with",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black),
+                      ),
+                      const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -149,11 +154,10 @@ class LoginScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text("Not on Medora yet?",
-                              style: TextStyle(fontSize: 16,color: Colors.black)),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black)),
                           TextButton(
-                            onPressed: () {
-                              // انتقل إلى شاشة التسجيل
-                            },
+                            onPressed: () {},
                             child: const Text(
                               "Sign up",
                               style: TextStyle(
@@ -193,6 +197,4 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }

@@ -7,14 +7,13 @@ class ForgotPasswordScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        //sssssssssss
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 80), // زيادة المساحة العلوية
+              SizedBox(height: 80),
               Image.asset(
                 'assets/images/image 226.png',
                 height: 200,
@@ -94,9 +93,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                  height:
-                      40), // زيادة المساحة السفلية لتجنب تغطية المحتوى بأسفل الشاشة
+              SizedBox(height: 40),
             ],
           ),
         ),

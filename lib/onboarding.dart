@@ -8,34 +8,31 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F3F3), // لون الخلفية
+      backgroundColor: const Color(0xFFF5F3F3),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // ✅ اللوجو مع كلمة "Medora"
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/stethoscope.png', // تأكد من وضع الصورة في المسار الصحيح
+                  'assets/images/stethoscope.png',
                   width: 20,
                 ),
-                const SizedBox(width: 0), // مسافة بين اللوجو والنص
+                const SizedBox(width: 0),
                 const Text(
                   "Medora",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF6FC0D3), // نفس لون الأزرار
+                    color: Color(0xFF6FC0D3),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 100), // زيادة المسافة قبل العنوان
-
-            // ✅ عنوان الترحيب
+            const SizedBox(height: 100),
             const Text(
               "Welcome to Medora\nyour health store!",
               textAlign: TextAlign.center,
@@ -45,9 +42,7 @@ class OnboardingScreen extends StatelessWidget {
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 100), // زيادة المسافة قبل الأزرار
-
-            // ✅ زر Sign Up
+            const SizedBox(height: 100),
             SizedBox(
               width: double.infinity,
               height: 50,
@@ -59,7 +54,7 @@ class OnboardingScreen extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF6FC0D3), // لون الزر
+                  backgroundColor: const Color(0xFF6FC0D3),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -70,9 +65,7 @@ class OnboardingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20), // زيادة المسافة قبل الزر التالي
-
-            // ✅ زر Login
+            const SizedBox(height: 20),
             SizedBox(
               width: double.infinity,
               height: 50,
@@ -95,9 +88,7 @@ class OnboardingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 30), // زيادة المسافة قبل زر الاستكشاف
-
-            // ✅ زر Explore
+            const SizedBox(height: 30),
             TextButton(
               onPressed: () {},
               child: const Text(

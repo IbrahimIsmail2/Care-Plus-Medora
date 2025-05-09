@@ -26,20 +26,22 @@ class Home extends StatelessWidget {
           child: ListView(
             children: [
               const SizedBox(height: 10),
-              Row(
-                children: [
-                  const CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/image 229.png'),
-                  ),
-                  const SizedBox(width: 10),
-                  Text(
-                    'Hi, Hala',
-                    style: GoogleFonts.poppins(
-                        fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
-                  const Spacer(),
-                  Image.asset('assets/images/ai_chat.png',width: 40,)]
-              ),
+              Row(children: [
+                const CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/image 229.png'),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  'Hi, Hala',
+                  style: GoogleFonts.poppins(
+                      fontSize: 16, fontWeight: FontWeight.w500),
+                ),
+                const Spacer(),
+                Image.asset(
+                  'assets/images/ai_chat.png',
+                  width: 40,
+                )
+              ]),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -49,16 +51,19 @@ class Home extends StatelessWidget {
                     hintText: 'Search any Product..',
                     hintStyle: const TextStyle(color: Colors.grey),
                     prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                    suffixIcon: const Icon(Icons.mic_none_rounded, color: Color(0xFF6FC0D3)),
+                    suffixIcon: const Icon(Icons.mic_none_rounded,
+                        color: Color(0xFF6FC0D3)),
                     filled: true,
                     fillColor: Colors.white,
-                    contentPadding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 25.0),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 20.0, horizontal: 25.0),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
                     ),
                     prefixIconConstraints: const BoxConstraints(
-                      minWidth: 50, minHeight: 50,
+                      minWidth: 50,
+                      minHeight: 50,
                     ),
                   ),
                 ),
@@ -99,7 +104,6 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-
               const SizedBox(height: 20),
               _buildSectionHeader('New Arrival'),
               const SizedBox(height: 10),
@@ -129,7 +133,8 @@ class Home extends StatelessWidget {
         ),
         Text(
           'view all >',
-          style: GoogleFonts.poppins(fontSize: 14, color: const Color(0xFF6FC0D3)),
+          style:
+              GoogleFonts.poppins(fontSize: 14, color: const Color(0xFF6FC0D3)),
         ),
       ],
     );
@@ -145,27 +150,41 @@ class Home extends StatelessWidget {
           width: 200,
           margin: const EdgeInsets.only(right: 10),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.black)
-          ),
-          child:Column(children: [
-            Expanded(
-              flex: 3,
-              child: Stack(children: [
-                Positioned(
-                  top: 8,
-                  right: 8,
-                  child: IconButton(
-                    icon: const Icon(Icons.favorite_border, color: Colors.orangeAccent),
-                    onPressed: () {
-                    },
-                  ),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.black)),
+          child: Column(
+            children: [
+              Expanded(
+                flex: 3,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 8,
+                      right: 8,
+                      child: IconButton(
+                        icon: const Icon(Icons.favorite_border,
+                            color: Colors.orangeAccent),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
                 ),
-              ],),
-            ),
-            Expanded(flex: 1,child: Container(width: double.infinity,decoration: BoxDecoration(color: Colors.grey[200],            borderRadius: BorderRadius.circular(10),
-            ) ,child: const Center(child: Text('Medical Devices',style: TextStyle(color: Colors.black),))))
-          ],),
+              ),
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        'Medical Devices',
+                        style: TextStyle(color: Colors.black),
+                      ))))
+            ],
+          ),
         ),
       ),
     );
@@ -200,7 +219,7 @@ class Home extends StatelessWidget {
                     topRight: Radius.circular(10),
                   ),
                   child: Image.network(
-                    'https://picsum.photos/200/300',  // Using a reliable placeholder image service
+                    'https://picsum.photos/200/300', // Using a reliable placeholder image service
                     height: 100,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -219,7 +238,8 @@ class Home extends StatelessWidget {
                   top: 8,
                   right: 8,
                   child: IconButton(
-                    icon: const Icon(Icons.favorite_border, color: Colors.orangeAccent),
+                    icon: const Icon(Icons.favorite_border,
+                        color: Colors.orangeAccent),
                     onPressed: () {},
                   ),
                 ),
@@ -241,7 +261,10 @@ class Home extends StatelessWidget {
                   const SizedBox(height: 4),
                   const Text(
                     'Lab LED Microscope 100',
-                    style: TextStyle(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w400),
+                    style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w400),
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 6),
@@ -250,11 +273,14 @@ class Home extends StatelessWidget {
                     children: [
                       const Text(
                         'EG 120',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green),
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green),
                       ),
                       Container(
-
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 2),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.orangeAccent),
                           borderRadius: BorderRadius.circular(8),
@@ -285,6 +311,7 @@ class Home extends StatelessWidget {
       ),
     );
   }
+
   Widget _buildArticlesList() {
     return SizedBox(
       height: 150, // Increased height to accommodate more text
@@ -325,9 +352,11 @@ class Home extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.7), // Slightly more opaque for better readability
+                    color: Colors.black.withOpacity(
+                        0.7), // Slightly more opaque for better readability
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10),
@@ -351,4 +380,5 @@ class Home extends StatelessWidget {
         ),
       ),
     );
-  }}
+  }
+}

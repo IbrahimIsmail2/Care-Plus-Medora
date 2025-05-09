@@ -89,7 +89,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // الخلفية المخصصة
           Positioned.fill(
             child: Align(
               alignment: Alignment.topRight,
@@ -100,8 +99,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-
-          // المحتوى الرئيسي
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -139,7 +136,6 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 40),
                 ElevatedButton(
                   onPressed: () {
-                    // الانتقال إلى OnboardingScreen
                     Navigator.push(
                       context,
                       MaterialPageRoute(
